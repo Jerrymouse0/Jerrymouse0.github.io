@@ -2,10 +2,26 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>My Blog</title>
+    <style>
+        div {background-color: red; width: 100px; height: 100px;}
+    </style>
+	<link href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script>
+		$(function(){
+            $("button").click = function() {
+                $("div").slideToggle(2000);
+            };
+        })
+	</script>
 </head>
 <body>
 	<h1>Hello World</h1>
+	<button class="btn btn-primary">Click</button>
 	<p>Welcome to my blog!</p>
+    <div></div>
 </body>
 </html>

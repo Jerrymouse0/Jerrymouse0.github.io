@@ -1,6 +1,6 @@
 @font-face {
     font-family: header;
-    src: url('img/SentyTEApro.ttf');
+    src: url('https://github.com/Jerrymouse0/Jerrymouse0.github.io/blob/master/SentyTEApro.ttf');
 }
 
 #bigImg {
@@ -24,7 +24,7 @@ div#bgc {
 }
 
 h1 {
-    font-family: 'Open Sans', sans-serif;
+    font-family: header;
     position: absolute;
     left: 30%;
     top: 25%;

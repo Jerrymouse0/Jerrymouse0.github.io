@@ -1,0 +1,152 @@
+@font-face {
+    font-family: headers;
+    src: url(img/SentyTEApro.ttf);
+}
+
+#bigImg {
+    filter: alpha(opacity=70);
+    -moz-opacity: 0.7;
+    -khtml-opacity: 0.7;
+    opacity: 0.7;
+}
+
+.mynav {
+    background-color: #2F4F4F;
+}
+
+.first-nav {
+    background-color: #CD5C5C;
+}
+
+div#bgc {
+    position: relative;
+    margin-top: -21px;
+}
+
+h1 {
+    font-family: headers;
+    position: absolute;
+    left: 30%;
+    top: 25%;
+    font-size: 5em;
+}
+
+#start-btn {
+    position: absolute;
+    left: 47%;
+    top: 62%;
+}
+
+@media screen and (max-width: 450px) {
+    h1 {
+        position: absolute;
+        left: 24%;
+        top: 12%;
+        font-size: 1.8em;
+    }
+    #start-btn {
+        position: absolute;
+        left: 35%;
+        top: 55%;
+    }
+}
+
+@media screen and (min-width: 450px) and (max-width: 610px) {
+    h1 {
+        position: absolute;
+        left: 18%;
+        top: 15%;
+        font-size: 2.8em;
+    }
+    #start-btn {
+        position: absolute;
+        left: 38%;
+        top: 56%;
+    }
+}
+
+@media screen and (min-width: 610px) and (max-width: 810px) {
+    h1 {
+        position: absolute;
+        left: 17%;
+        top: 15%;
+        font-size: 3.5em;
+    }
+    #start-btn {
+        position: absolute;
+        left: 40%;
+        top: 57%;
+    }
+}
+
+@media screen and (min-width: 810px) and (max-width: 1100px) {
+    h1 {
+        position: absolute;
+        left: 28%;
+        top: 15%;
+        font-size: 4em;
+    }
+}
+
+.progress-bar-purple {
+    background-color: purple;
+    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+}
+
+.text-purple {
+    color: purple;
+}
+
+.text-brown {
+    color: brown;
+}
+
+td {
+    font-size: 1.3em;
+}
+
+.p1,
+.p2,
+.p3 {
+    text-indent: 2em;
+}
+
+#notes,
+#essay,
+#diary {
+    height: 200px;
+}
+
+a,
+a:hover,
+a:link,
+a:visited,
+a:active {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+#footer {
+    background-color: black;
+    width: 100%;
+    height: 124px;
+    margin-bottom: -10px;
+}
+
+.github,
+.email,
+.QQ,
+.tel {
+    text-align: center;
+    font-size: 15px;
+    color: white;
+    margin: 10px auto;
+}
+
+#github a:link,
+#github a:visited {
+    color: white;
+}

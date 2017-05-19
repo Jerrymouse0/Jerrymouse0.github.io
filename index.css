@@ -35,15 +35,16 @@ h1 {
 @media screen and (max-width: 380px) {
     h1 {
         position: absolute;
-        left: 18.5%;
+        left: 17.5%;
         top: 11%;
         font-size: 2em;
         font-weight: bold;
+        font-style: italic;
     }
     #start-btn {
         position: absolute;
         left: 33%;
-        top: 51%;
+        top: 52%;
     }
 }
 

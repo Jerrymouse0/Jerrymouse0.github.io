@@ -162,6 +162,30 @@ a:active {
     margin: 10px auto;
 }
 
+.foot {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+}
+
+@media screen and (min-width: 263px) and (max-width: 310px) {
+    #footer {
+        background-color: black;
+        width: 100%;
+        height: 148px;
+        margin-bottom: -10px;
+    }
+}
+
+@media screen and (max-width: 263px) {
+    #footer {
+        background-color: black;
+        width: 100%;
+        height: 167px;
+        margin-bottom: -10px;
+    }
+}
+
 #github a:link,
 #github a:visited {
     color: white;

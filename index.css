@@ -21,55 +21,69 @@ div#bgc {
 h1 {
     font-family: 华文隶书;
     position: absolute;
-    left: 27%;
+    left: 25%;
     top: 25%;
     font-size: 6em;
 }
 
 #start-btn {
     position: absolute;
-    left: 47%;
+    left: 45.6%;
     top: 62%;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 380px) {
     h1 {
         position: absolute;
-        left: 24%;
-        top: 12%;
-        font-size: 1.8em;
+        left: 20%;
+        top: 11%;
+        font-size: 1.9em;
     }
     #start-btn {
         position: absolute;
-        left: 35%;
+        left: 33%;
+        top: 49%;
+    }
+}
+
+@media screen and (min-width: 380px) and (max-width: 500px) {
+    h1 {
+        position: absolute;
+        left: 20%;
+        top: 12%;
+        font-size: 2.5em;
+    }
+    #start-btn {
+        position: absolute;
+        left: 37%;
         top: 55%;
     }
 }
 
-@media screen and (min-width: 450px) and (max-width: 610px) {
+@media screen and (min-width: 500px) and (max-width: 650px) {
     h1 {
         position: absolute;
-        left: 18%;
+        left: 20%;
         top: 15%;
-        font-size: 2.8em;
+        font-size: 3em;
     }
     #start-btn {
         position: absolute;
-        left: 38%;
+        left: 40%;
         top: 56%;
     }
 }
 
-@media screen and (min-width: 610px) and (max-width: 810px) {
+@media screen and (min-width: 650px) and (max-width: 810px) {
     h1 {
         position: absolute;
-        left: 17%;
+        left: 22.5%;
         top: 15%;
         font-size: 3.5em;
     }
     #start-btn {
         position: absolute;
-        left: 40%;
+        left: 42%;
         top: 57%;
     }
 }
@@ -77,9 +91,14 @@ h1 {
 @media screen and (min-width: 810px) and (max-width: 1100px) {
     h1 {
         position: absolute;
-        left: 28%;
+        left: 23%;
         top: 15%;
-        font-size: 4em;
+        font-size: 5em;
+    }
+    #start-btn {
+        position: absolute;
+        left: 44.5%;
+        top: 57%;
     }
 }
 

@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -15,6 +15,32 @@
         <script src="http://apps.bdimg.com/libs/html5shiv/r29/html5.min.js"></script>
         <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
+    <script type="text/javascript">
+    $(function() {
+        var x = setInterval(function() {
+            var today = new Date();
+            var year = today.getFullYear();
+            var month = today.getMonth() + 1;
+            var day = today.getDate();
+            var week = ["星期天", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+            var iweek = week[today.getDay()];
+            var hour = today.getHours();
+            var minute = today.getMinutes();
+            var second = today.getSeconds();
+            hour = checkTime(hour);
+            minute = checkTime(minute);
+            second = checkTime(second);
+            $("#datetime").text("本地时间：" + year + "年" + month + "月" + day + "日" + " " + hour + ":" + minute + ":" + second + " " + iweek);
+
+            function checkTime(i) {
+                if (i < 10) {
+                    i = "0" + i;
+                }
+                return i;
+            }
+        }, 1000);
+    });
+    </script>
 </head>
 
 <body>
@@ -45,8 +71,9 @@
             <button class="btn btn-danger btn-lg" id="start-btn">&nbsp;S&nbsp;T&nbsp;A&nbsp;R&nbsp;T&nbsp;</button>
         </a>
     </div>
-    <br>
-    <br>
+    <hr class="alert-danger">
+    <p id="datetime" class="text-center text-primary h3"></p>
+    <hr class="alert-danger">
     <div class="container" id="1">
         <div class="row">
             <div class="col-md-12 h1">郭晨</div>
@@ -194,7 +221,7 @@
             <div class="col-md-4">
                 <div class="panel panel-danger">
                     <div class="panel-heading">
-                        <h3 class="panel-title text-center">JS轮播图特效</h3></div>
+                        <h3 class="panel-title text-center">JS轮播图</h3></div>
                     <div class="panel-body text-center h4">
                         <a href="" style="color: purple;font-style: italic;">点击进入</a>
                     </div>
@@ -211,7 +238,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="panel panel-primary">
+                <div class="panel panel-info">
                     <div class="panel-heading text-center">
                         <h3 class="panel-title">淘宝放大镜效果</h3>
                     </div>
@@ -242,11 +269,23 @@
                 </div>
             </div>
             <div class="col-md-4">
+                <div class="panel panel-info">
+                    <div class="panel-heading text-center">
+                        <h3 class="panel-title">倒计时效果</h3>
+                    </div>
+                    <div class="panel-body text-center h4">
+                        <a href="http://www.morning1014.info/Countdown.html" style="color: orange;font-style: italic;">点击进入</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
                 <div class="panel panel-primary">
                     <div class="panel-heading text-center">
                         <h3 class="panel-title">更多demo请点击↓↓↓</h3>
                     </div>
-                    <div class="panel-body text-center h3">
+                    <div class="panel-body text-center h2">
                         <a href="http://www.morning1014.info/demo.html" style="color: red;font-style: italic;"><strong>进入demo汇总页面</strong></a>
                     </div>
                 </div>

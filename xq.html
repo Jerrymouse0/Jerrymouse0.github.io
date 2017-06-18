@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <title>傻强强生日倒计时</title>
+    <style type="text/css">
+    p {
+        text-align: center;
+        font-family: "黑体";
+        font-weight: bold;
+        font-size: 30px;
+        color: black;
+        text-shadow: 5px 5px 8px red;
+    }
+    </style>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <script type="text/javascript">
+    var future = new Date('May 09, 2018 00:00:00').getTime();
+    // var my = new Date('May 09, 2018 00:00:00');
+    var x = setInterval(function() {
+        /*var myy = my.getFullYear();
+        var mymon = my.getMonth() + 1;
+        var myday = my.getDate();
+        var myh = my.getHours();
+        var mym = my.getMinutes();
+        var mys = my.getSeconds();
+        myh = checkTime(myh);
+        mym = checkTime(mym);
+        mys = checkTime(mys);*/
+        var now = new Date().getTime();
+        var fun = future - now;
+        var d = Math.floor(fun / (1000 * 60 * 60 * 24));
+        var h = Math.floor(fun % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
+        var m = Math.floor(fun % (1000 * 60 * 60) / (1000 * 60));
+        var s = Math.floor(fun % (1000 * 60) / 1000);
+        h = checkTime(h);
+        m = checkTime(m);
+        s = checkTime(s);
+
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+
+        }
+        document.getElementById("demo").innerHTML = "距傻强强19岁生日" + 
+         // + myy + "年" + mymon + "月" + myday + "日" + myh + ":" + mym + ":" + mys + " " + 
+         "还有" + d + "天" + h + "小时" + m + "分" + s + "秒";
+        if (fun < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "请重置";
+        }
+    }, 1000);
+    </script>
+</body>
+
+</html>

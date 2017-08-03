@@ -13,7 +13,7 @@
 <body> 
 	<br>
 	<br>
-	<h2 class="text-center text-primary">此弹窗调用了搜狐的第三方JS，将获取到的IP地址和城市信息返回为JSON对象，最后显示在页面中</h2>
+	<h2 class="text-center text-primary">此方法调用了搜狐的第三方JS，将获取到的IP地址和城市信息返回为JSON对象，最后显示在页面中</h2>
 	<br>
 	<p id="p1" class="text-center" style="color:chocolate;font-size:20px"></p>
 	<br>
@@ -29,7 +29,7 @@
 	<script type="text/javascript">
 	alert("您的IP地址为：" + returnCitySN["cip"]+"，您所在的城市："+returnCitySN["cname"] + "，该城市的行政代码：" + returnCitySN["cid"] + "\n\n请点击确定！");
 	var a = "您的IP地址为：" + returnCitySN["cip"]+'，您所在的城市：'+returnCitySN["cname"] + "，该城市的行政代码：" + returnCitySN["cid"];
-	document.getElementById("p1") = a;    
+	document.getElementById("p1").innerHTML = a;    
     </script>
 </body>
 

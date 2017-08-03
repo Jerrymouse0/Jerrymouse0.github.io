@@ -3,6 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <title>调用第三方JS获取IP地址</title>
 	<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
 </head>
@@ -11,6 +14,19 @@
     <script type="text/javascript">
 	alert("您的IP地址为：" + returnCitySN["cip"]+'，您所在的城市：'+returnCitySN["cname"] + "，该城市的行政代码：" + returnCitySN["cid"]);
     </script>
+	<br>
+	<br>
+	<h2 class="text-center text-primary">此弹窗调用了搜狐的第三方JS，将获取到的IP地址和城市信息返回为JSON对象，最后显示在页面中</h2>
+	<br>
+	<hr class="text-warning">
+	<h3 class="text-danger">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;实现的代码为：</h3>
+	<br>
+	<pre>
+	    &lt;script src="http://pv.sohu.com/cityjson?ie=utf-8">&lt;/script&gt;
+            &lt;script type="text/javascript"&gt;
+	        alert("您的IP地址为：" + returnCitySN["cip"]+'，您所在的城市：'+returnCitySN["cname"] + "，该城市的行政代码：" + returnCitySN["cid"]);
+            &lt;/script&gt;
+	</pre>
 </body>
 
 </html>

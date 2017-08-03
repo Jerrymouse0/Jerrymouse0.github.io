@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>调用第三方JS获取IP地址</title>
+	<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+</head>
+
+<body>
+    <script type="text/javascript">
+	alert("您的IP地址为：" + returnCitySN["cip"]+'，您所在的城市：'+returnCitySN["cname"] + "，该城市的行政代码：" + returnCitySN["cid"]);
+    </script>
+</body>
+
+</html>

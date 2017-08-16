@@ -40,6 +40,13 @@
             }
         }, 1000);
     });
+        if(localStorage.pagecount) {
+            localStorage.pagecount = Number(localStorage.pagecount) + 1;
+        }
+        else {
+            localStorage.pagecount = 1;
+        }
+        $("#count").text("该网页的浏览次数为：" + localStorage.pagecount + "次");
     </script>
 </head>
 
@@ -75,6 +82,8 @@
     <div class="container" id="1">
         <hr class="alert-danger">
         <p id="datetime" class="text-center text-primary h3"></p>
+        <br>
+        <p id="count" class="text-center text-warning"><p>
         <hr class="alert-danger">
         <div class="row">
             <div class="col-md-12 h1">郭晨</div>

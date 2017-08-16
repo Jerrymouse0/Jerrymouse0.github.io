@@ -39,7 +39,6 @@
                 return i;
             }
         }, 1000);
-    });
         if(localStorage.pagecount) {
             localStorage.pagecount = Number(localStorage.pagecount) + 1;
         }
@@ -47,6 +46,7 @@
             localStorage.pagecount = 1;
         }
         $("#count").text("该网页的浏览次数为：" + localStorage.pagecount + "次");
+    });
     </script>
 </head>
 

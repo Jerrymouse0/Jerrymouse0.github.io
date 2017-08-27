@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <title>Love</title>
+    <style type="text/css" media="screen">
+    body {
+        background-color: skyblue !important;
+    }
+
+    .main {
+        position: relative;
+    }
+
+    @keyframes rotating {
+        from {
+            transform: rotate(0);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    #music {
+        width: 100px;
+        height: 100px;
+        background-color: skyblue;
+        animation: rotating 2s linear infinite;
+        float: right !important;
+    }
+
+    a {
+        color: purple;
+        font-size: 22px;
+        text-decoration: none !important;
+    }
+
+    a b {
+        color: red;
+        font-size: 25px;
+    }
+
+    .end {
+        position: absolute;
+        top: 550px;
+        left: 30%;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="blink" class="h1 text-center">★☆★☆娜娜，七夕快乐！☆★☆★</div>
+    <hr class="text-success">
+    <div class="main">
+        <div id="music">
+            <img src="http://www.morning1014.info/music.png" alt="music" id="png">
+        </div>
+        <br>
+        <div id="showStr" class="h4">
+        </div>
+        <audio autoplay loop>
+            <source src="http://www.morning1014.info/123.mp3" type="audio/mpeg">
+        </audio>
+        <p id="string" style="display: none">
+            <font color="purple">亲爱的娜娜~</font>
+            <br> 首先，请开启手机外音(●—●)
+            <br>
+            <font color="orange">今天是七夕，牛郎织女相会的一天(⁎˃ᴗ˂⁎)</font>
+            <br>
+            <font color="green">心情不错，为你演示一段代码￣▽￣</font>
+            <br>
+            <font color="gray">//有个男孩，他叫郭晨</font>
+            <br>
+            <font color="darkblue">var boy = "guochen";</font>
+            <br>
+            <font color="gray">//有个女孩，她叫娜娜</font>
+            <br>
+            <font color='deeppink'>var girl = "nana";</font>
+            <br>
+            <font color="gray">//在2017年8月16日，男孩和女孩相识</font>
+            <br>
+            <font color="maroon">var date = '20170816';</font>
+            <br>
+            <font color="teal">console.log("我们相识");</font>
+            <br>
+            <font color="gray">//我们一共聊了13天</font>
+            <br>
+            <font color="maroon">var today = '20170828';</font>
+            <br>
+            <font color="teal">console.log("相知13天");</font>
+            <br>
+            <font color="gray">//如果你没有告诉我你的心意，可能不会有结果...</font>
+            <br>
+            <font color='saddlebrown'>if(You haven't told me your mind) {</font>
+            <br>
+            <font color="navy">return nothing;</font>
+            <br> }
+            <br>
+            <font color="gray">//不过，现在明白了你的意思，所以希望能够99</font>
+            <br>
+            <font color='saddlebrown'>else (getYourMind() == true) {</font>
+            <br>
+            <font color="navy">return "互相了解，长长久久";</font>
+            <br> }
+            <br>
+            <font color="gray">//最后，希望你能跟我分享一些你的日常，和你的过往，让我更加了解你...</font>
+            <br>
+            <font color="crimson">while(you can share with me your life and past) {</font>
+            <br>
+            <font color="darkgreen">I can know more about you!</font>
+            <br> }
+            <br>
+            <font color="red">❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤</font>
+            <br>
+        </p>
+        <div class="end">
+            <h4 class="text-danger">↓↓↓↓↓点击查看惊喜↓↓↓↓↓</h4>
+            <a href="http://www.morning1014.info/heart.html"><b>❤❤❤</b>就在里面！<b>❤❤❤</b></a>
+        </div>
+    </div>
+    <script type="text/javascript">
+    function changeColor() {
+        var color = "#f00|#0f0|#00f|#880|#808|#088|yellow|green|blue|orange";
+        color = color.split("|");
+        document.getElementById("blink").style.color = color[parseInt(Math.random() * color.length)];
+    }
+    setInterval("changeColor()", 200);
+    var string = document.getElementById("string").innerHTML;
+    var index = 0;
+
+    function type() {
+        if (index == string.length) {
+            return;
+        }
+        document.getElementById("showStr").innerHTML = string.substring(0, index++);
+    }
+    setInterval(type, 100);
+    </script>
+</body>
+
+</html>
+<!-- 做有用的事，说勇敢的话，
+想美好的事，睡安稳的觉，
+把时间用在进步上，而不是抱怨上。
+愿你遇到这样的人，愿你成为这样的人。 -->

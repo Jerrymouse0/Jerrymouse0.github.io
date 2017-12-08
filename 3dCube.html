@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin:0; padding:0;
+        }
+        body{
+            background-color: #c0c0c0;
+            position: relative;
+        }
+        .box{
+            width: 300px;
+            height: 300px;
+            /*border:1px solid red;*/
+            position: absolute;
+
+            transform-style:preserve-3d;
+            transform: rotateX(-30deg) rotateY(-60deg) rotateZ(0deg);
+            animation:gun 10s infinite linear;
+            color:white;
+        }
+        .box>div{
+            width: 300px;
+            height: 300px;
+            text-align:center;
+            /*font:700 100px/300px "Microsoft YaHei";*/
+            font-size:50px;
+            line-height:300px;
+            position: absolute;
+            top:0;
+            left:0;
+            font-weight:700;
+            /*文字不被选中 css3，有兼容性问题*/
+            user-select: none;
+
+        }
+        .left{
+            background-color: rgba(255, 0, 0, 0.3);
+            transform:rotateY(90deg) translateZ(-150px);
+        }
+        .right{
+            background-color: rgba(0, 255, 0, 0.3);
+            transform:rotateY(90deg) translateZ(150px);
+        }
+        .front{
+            background-color: rgba(221, 100, 25, 0.3);
+            transform:translateZ(150px);
+        }
+        .back{
+            background-color: rgba(11, 255, 25, 0.3);
+            transform:translateZ(-150px);
+        }
+        .up{
+            background-color: rgba(225, 255, 0, 0.3);
+            transform:rotateX(90deg) translateZ(150px);
+        }
+        .down{
+            background-color: rgba(0, 255, 255, 0.3);
+            transform-origin:bottom;
+            transform:rotateX(90deg) translateY(150px);
+        }
+
+        @keyframes gun{
+            0%{transform: rotateX(-30deg) rotateY(-60deg) rotateZ(0deg)
+            translateX(0px) translateY(0px) translateZ(0px);color:white;}
+            25%{transform: rotateX(150deg) rotateY(120deg) rotateZ(180deg)
+            translateX(100px) translateY(200px) translateZ(150px);color:red;}
+            50%{transform: rotateX(330deg) rotateY(300deg) rotateZ(360deg)
+            translateX(0px) translateY(0px) translateZ(0px);color:blue;}
+            75%{transform: rotateX(150deg) rotateY(120deg) rotateZ(180deg)
+            translateX(-100px) translateY(-200px) translateZ(-150px);color:green;}
+            100%{transform: rotateX(-30deg) rotateY(-60deg) rotateZ(0deg)
+            translateX(0px) translateY(0px) translateZ(0px);color:white;}
+        }
+        .control{
+            position: fixed;
+            left:10px;
+            top:10px;
+            /*文字不被选中 css3，有兼容性问题*/
+            user-select: none;
+        }
+        p{
+            color:rgba(0,0,0,0.2);
+            font-size:50px;
+            position: fixed;
+            left:10px;
+            top:30px;
+            /*文字不被选中 css3，有兼容性问题*/
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="front">(*^__^*)</div>
+        <div class="back">￣△￣</div>
+        <div class="left"><(￣ˇ￣)/</div>
+        <div class="right">(⊙ω⊙)</div>
+        <div class="up">(◐_◑)</div>
+        <div class="down">(⊙▽⊙)</div>
+    </div>
+   <div class="control">
+       <button id="btn1">bigger</button>
+       <button id="btn2">smaller</button>
+       <button id="btn3">random</button>
+   </div>
+    <p id="p"></p>
+</body>
+</html>
+<script>
+    var box = document.getElementsByTagName("div")[0];
+    var boxs = box.children;
+    function $(id){return document.getElementById(id)};
+    var num = 0;
+    //变大---------------------------------------------------
+    $("btn1").onclick = function(){
+        //防止冒泡begin
+        poo();
+        //防止冒泡end
+        $("p").innerHTML = "";
+        //alert(11);
+        num = boxs[0].offsetWidth/100;
+        //console.log(num);
+        num++;
+        if(num === 10){
+            num = 9;
+            $("p").innerHTML = "别点了，已经最大=。=";
+        }
+        for(var i=0 ;i<boxs.length; i++){
+            changeSize(i,num);
+        }
+        change(num);
+    }
+    //变小---------------------------------------------------
+    $("btn2").onclick = function(){
+        poo();
+        $("p").innerHTML = "";
+        num = boxs[0].offsetWidth/100;
+        num--;
+        if(num === 0 ){
+            num = 1;
+            $("p").innerHTML = "别点了，已经最小=。=";
+        }
+        for(var i=0 ;i<boxs.length; i++){
+            changeSize(i,num);
+        }
+        change(num);
+    }
+    //随机---------------------------------------------------
+    $("btn3").onclick = function(){
+        poo();
+        $("p").innerHTML = "";
+        num = parseInt(Math.random()*10);
+        num = num<=0?1 : num;
+        for(var i=0 ;i<boxs.length; i++){
+            changeSize(i,num);
+            //console.log(num);
+        }
+        change(num);
+    }
+
+    //改变位置----------------------------------------------
+    var target = 0, timer = null;
+    document.onclick = function(event){
+        var event = event || window.event;
+        //console.log(event.clientX);
+//        box.style.left = event.clientX +"px";
+//        box.style.top = event.clientY +"px";
+        animate(box,event.clientX,event.clientY)
+
+    }
+
+//----------------------------------------------------------
+
+    function animate(obj,targetX,targetY){
+        clearTimeout(obj.timer);
+
+        obj.timer = setInterval(function(){
+            var currentX = parseInt(obj.offsetLeft);
+            var currentY = parseInt(obj.offsetTop);
+            var stepX = (targetX - currentX)/10;
+            var stepY = (targetY - currentY)/10;
+            stepX = stepX>0? Math.ceil(stepX): Math.floor(stepX);
+            stepY = stepY>0? Math.ceil(stepY): Math.floor(stepY);
+
+            obj.style.left = currentX + stepX +"px";
+            obj.style.top = currentY + stepY +"px";
+            console.log(obj.style.top);
+            if(currentX == targetX){
+                clearTimeout(obj.timer);
+            }
+        },30)
+    }
+//改变size
+    function changeSize(siz,result){
+        boxs[siz].style.width = result*100 +"px";
+        boxs[siz].style.height = result*100 +"px";
+        boxs[siz].style.fontSize = result*20 +"px";
+        boxs[siz].style.lineHeight = result*100 +"px";
+    }
+//运动变化
+    function change(result){
+        boxs[0].style.transform = "translateZ("+result*50+"px)";
+        boxs[1].style.transform = "translateZ("+(-result*50)+"px)";
+        boxs[2].style.transform = "rotateY(90deg) translateZ("+(-result*50)+"px)";
+        boxs[3].style.transform = "rotateY(90deg) translateZ("+result*50+"px)";
+        boxs[4].style.transform = "rotateX(90deg) translateZ("+result*50+"px)";
+        boxs[5].style.transform = "rotateX(90deg) translateY("+result*50+"px)";
+
+    }
+//防止冒泡事件
+    function poo(){
+        //防止冒泡begin
+        if(event && event.stopPropagation)
+        {
+            event.stopPropagation();  //  w3c 标准
+        }
+        else
+        {
+            event.cancelBubble = true;  // ie 678  ie浏览器
+        }
+        //防止冒泡end
+    }
+</script>
